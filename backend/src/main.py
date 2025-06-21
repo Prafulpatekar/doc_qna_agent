@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from src.app.routes import upload, query
+from src.routes import upload, query
 
 
 app = FastAPI()
