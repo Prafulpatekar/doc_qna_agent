@@ -42,3 +42,5 @@ htmlcov/
 Thumbs.db
 .env
 poetry.lock
+
+uploaded_docs/

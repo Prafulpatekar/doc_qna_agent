@@ -29,17 +29,17 @@ async def upload_file(file: UploadFile = File(...)):
         with open(file_path, "wb") as f:
             f.write(content)
         doc_data = {
-            "document_id": doc_id,
+            "id": doc_id,
             "filename": filename,
             "uploaded_path": file_path,
-            "created_at": datetime.datetime.now()
+            "created_at": str(datetime.datetime.now())
         }
         uploaded_doc_collection.insert_one(doc_data)
         return JSONResponse(
             content={
                 "message": "File uploaded successfully",
                 "status": True,
-                "data": {"document_id": doc_id}
+                "data": {"id": doc_id}
             },
             status_code=status.HTTP_201_CREATED
         )
